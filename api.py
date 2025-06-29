@@ -15,7 +15,6 @@ config = {
 def inject():
     username = request.form['username']
     password = request.form['password']
-    # Perform SQL injection attack
     import sql_injection
     result = sql_injection.inject(username, password)
     return jsonify({'result': result})
