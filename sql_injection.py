@@ -1,6 +1,6 @@
 import mysql.connector
 
-# Database connection settings
+
 config = {
     'user': 'root',
     'password': 'password',
@@ -12,7 +12,6 @@ def inject(username, password):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     
-    # Perform SQL injection attack 
     query = "SELECT * FROM users WHERE username='{}' AND password='{}'".format(username,password)
 
     cursor.execute(query)
